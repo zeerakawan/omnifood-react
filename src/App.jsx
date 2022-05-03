@@ -1,7 +1,13 @@
+import Hero from "./components/hero/Hero.component";
+import FeaturedIn from "./components/featured-in/FeaturedIn.component";
+
+import "./App.css";
+
 const App = () => {
   return (
     <div>
-      <h1 className="heading">Hello World</h1>
+      <Hero />
+      <FeaturedIn />
     </div>
   );
 };
