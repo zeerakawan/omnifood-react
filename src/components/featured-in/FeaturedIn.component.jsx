@@ -4,7 +4,7 @@ import TechcrunchLogo from "../../assets/img/logos/techcrunch.png";
 import BusinessInsiderLogo from "../../assets/img/logos/business-insider.png";
 import NYTLogo from "../../assets/img/logos/the-new-york-times.png";
 import ForbesLogo from "../../assets/img/logos/forbes.png";
-import USAToday from "../../assets/img/logos/usa-today.png";
+import USATodayLogo from "../../assets/img/logos/usa-today.png";
 
 const FeaturedIn = () => {
   return (
@@ -16,7 +16,7 @@ const FeaturedIn = () => {
           <img src={BusinessInsiderLogo} alt="Business Insider Logo" />
           <img src={NYTLogo} alt="The New York Times Logo" />
           <img src={ForbesLogo} alt="Forbes Logo" />
-          <img src={USAToday} alt="USA Today" />
+          <img src={USATodayLogo} alt="USA Today" />
         </div>
       </div>
     </section>
