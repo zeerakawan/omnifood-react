@@ -9,6 +9,29 @@ import testimonialCustomer5 from "../../assets/img/customers/customer-5.jpg";
 import testimonialCustomer6 from "../../assets/img/customers/customer-6.jpg";
 
 const Hero = () => {
+  // STICKY NAVIGATION
+  const sectionHeroElement = document.querySelector(".section-hero");
+
+  const obs = new IntersectionObserver(
+    function (entries) {
+      const ents = entries[0];
+
+      if (!ents.isIntersecting) {
+        document.body.classList.add("sticky");
+      }
+      if (ents.isIntersecting) {
+        document.body.classList.remove("sticky");
+      }
+    },
+    {
+      // IN the viewport
+      root: null,
+      threshold: 0,
+      rootMargin: "-80px",
+    }
+  );
+  obs.observe(sectionHeroElement);
+
   return (
     <section className="section-hero">
       <div className="hero">
@@ -43,7 +66,7 @@ const Hero = () => {
         </div>
         <div className="hero-img-box">
           <picture>
-            <img src={HeroImage} class="hero-img" alt="Hero" />
+            <img src={HeroImage} className="hero-img" alt="Hero" />
           </picture>
         </div>
       </div>

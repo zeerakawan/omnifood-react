@@ -46,7 +46,7 @@ const Pricing = () => {
             </li>
           </ul>
           <div className="plan-sign-up">
-            <a href="#cta" class="btn btn--full">
+            <a href="#cta" className="btn btn--full">
               {" "}
               Start eating well{" "}
             </a>
@@ -89,12 +89,15 @@ const Pricing = () => {
               <span>Delivery is free</span>
             </li>
             <li className="list-item">
-              <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+              <ion-icon
+                className="list-icon"
+                name="checkmark-outline"
+              ></ion-icon>
               <span>Get access to latest recipes</span>
             </li>
           </ul>
           <div className="plan-sign-up">
-            <a href="#cta" class="btn btn--full">
+            <a href="#cta" className="btn btn--full">
               {" "}
               Start eating well{" "}
             </a>

@@ -13,9 +13,9 @@ const CTA = () => {
               meal is on us!
             </p>
 
-            <form className="cta-form" name="sign up" netlify>
+            <form className="cta-form" name="sign up">
               <div>
-                <label for="full-name">Full name</label>
+                <label htmlFor="full-name">Full name</label>
                 <input
                   id="full-name"
                   type="text"
@@ -25,7 +25,7 @@ const CTA = () => {
                 />
               </div>
               <div>
-                <label for="email">Email address</label>
+                <label htmlFor="email">Email address</label>
                 <input
                   id="email"
                   type="email"
@@ -35,7 +35,9 @@ const CTA = () => {
                 />
               </div>
               <div>
-                <label for="select-where">Where did you hear about us?</label>
+                <label htmlFor="select-where">
+                  Where did you hear about us?
+                </label>
                 <select id="select-where" name="select-where" required>
                   <option value="">Please choose one option:</option>
                   <option value="friends">Friends and Family</option>

@@ -159,7 +159,7 @@ const Meals = () => {
         </div>
       </div>
       <div className="container all-recipes">
-        <a href="#meals" class="link">
+        <a href="#meals" className="link">
           See all recipes &rarr;
         </a>
       </div>
