@@ -10,27 +10,27 @@ import testimonialCustomer6 from "../../assets/img/customers/customer-6.jpg";
 
 const Hero = () => {
   // STICKY NAVIGATION
-  const sectionHeroElement = document.querySelector(".section-hero");
+  // const sectionHeroElement = document.querySelector(".section-hero");
 
-  const obs = new IntersectionObserver(
-    function (entries) {
-      const ents = entries[0];
+  // const obs = new IntersectionObserver(
+  //   function (entries) {
+  //     const ents = entries[0];
 
-      if (!ents.isIntersecting) {
-        document.body.classList.add("sticky");
-      }
-      if (ents.isIntersecting) {
-        document.body.classList.remove("sticky");
-      }
-    },
-    {
-      // IN the viewport
-      root: null,
-      threshold: 0,
-      rootMargin: "-80px",
-    }
-  );
-  obs.observe(sectionHeroElement);
+  //     if (!ents.isIntersecting) {
+  //       document.body.classList.add("sticky");
+  //     }
+  //     if (ents.isIntersecting) {
+  //       document.body.classList.remove("sticky");
+  //     }
+  //   },
+  //   {
+  //     // IN the viewport
+  //     root: null,
+  //     threshold: 0,
+  //     rootMargin: "-80px",
+  //   }
+  // );
+  // obs.observe(sectionHeroElement);
 
   return (
     <section className="section-hero">

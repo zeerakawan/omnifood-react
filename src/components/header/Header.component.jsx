@@ -1,50 +1,69 @@
 import { useState } from "react";
 
+import Logo from "../logo/Logo.component";
+import IonIcon from "../ionicon/IonIcon.component";
+import List from "../list/List.component";
+
 import "./Header.styles.css";
 // import "./Header.script";
 
 import HeaderLogo from "../../assets/img/omnifood-logo.png";
 
-const Header = () => {
-  const [open, setOpen] = useState(true);
+const navList = [
+  {
+    listName: "How it works",
+    className: "main-nav-links",
+    href: "#how",
+  },
+  {
+    listName: "Meals",
+    className: "main-nav-links",
+    href: "#meals",
+  },
+  {
+    listName: "Testimonials",
+    className: "main-nav-links",
+    href: "#testimonials",
+  },
+  {
+    listName: "Pricing",
+    className: "main-nav-links",
+    href: "#pricing",
+  },
+  {
+    listName: "Try for free",
+    className: "main-nav-links nav-cta",
+    href: "#cta",
+  },
+];
+
+const renderNavList = navList.map((list) => {
   return (
-    <header className={`header ${open ? "" : "nav-open"}`}>
-      <a href="#logo">
-        <img src={HeaderLogo} className="logo" alt="Omnifood Logo" />
-      </a>
+    <List key={list.href} href={list.href} className={list.className}>
+      {list.listName}
+    </List>
+  );
+});
+
+const Header = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <header className={`header ${open ? "nav-open" : ""}`}>
+      <Logo
+        href="#logo"
+        className="logo"
+        alt="omnifood-logo"
+        src={HeaderLogo}
+      />
       <nav className="main-nav">
-        <ul className="main-nav-list">
-          <li>
-            <a href="#how" className="main-nav-links">
-              How it works
-            </a>
-          </li>
-          <li>
-            <a href="#meals" className="main-nav-links">
-              Meals
-            </a>
-          </li>
-          <li>
-            <a href="#testimonials" className="main-nav-links">
-              Testimonials
-            </a>
-          </li>
-          <li>
-            <a href="#pricing" className="main-nav-links">
-              Pricing
-            </a>
-          </li>
-          <li>
-            <a href="#cta" className="main-nav-links nav-cta">
-              Try for free
-            </a>
-          </li>
-        </ul>
+        <ul className="main-nav-list">{renderNavList}</ul>
       </nav>
 
       <button className="btn-mobile-nav" onClick={() => setOpen(!open)}>
-        <ion-icon className="icon-mobile-nav" name="menu-outline"></ion-icon>
-        <ion-icon className="icon-mobile-nav" name="close-outline"></ion-icon>
+        <IonIcon
+          className="icon-mobile-nav"
+          name={open ? "close-outline" : "menu-outline"}
+        ></IonIcon>
       </button>
     </header>
   );

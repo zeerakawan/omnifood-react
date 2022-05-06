@@ -1,49 +1,116 @@
 import "./Footer.styles.css";
 
 import FooterLogo from "../../assets/img/omnifood-logo.png";
+import IonIcon from "../ionicon/IonIcon.component";
+import Logo from "../logo/Logo.component";
+import List from "../list/List.component";
+import Anchor from "../anchor/anchor.component";
+
+const socialLinkList = [
+  {
+    name: "instagram",
+  },
+  {
+    name: "facebook",
+  },
+  {
+    name: "twitter",
+  },
+];
+
+const accountLinkList = [
+  {
+    item: "create Account",
+  },
+  {
+    item: "Sign In",
+  },
+  {
+    item: "iOS App",
+  },
+  {
+    item: "Android App",
+  },
+];
+
+const companyLinkList = [
+  {
+    item: "About Omnifood",
+  },
+  {
+    item: "For Business",
+  },
+  {
+    item: "Cooking partners",
+  },
+  {
+    item: "Careers",
+  },
+];
+
+const resourcesListLink = [
+  {
+    item: "Reciepe directory",
+  },
+  {
+    item: "Help center",
+  },
+  {
+    item: "Privacy & Terms",
+  },
+];
+
+const renderSocialLinkList = socialLinkList.map((list) => {
+  return (
+    <List className="footer-link" href="#footer">
+      <IonIcon className="social-icon" name={`logo-${list.name}`}></IonIcon>
+    </List>
+  );
+});
+
+const renderCompanyLinkList = companyLinkList.map((list) => {
+  return (
+    <List className="footer-link" href="#footer">
+      {list.item}
+    </List>
+  );
+});
+const renderAccountLinkList = accountLinkList.map((list) => {
+  return (
+    <List className="footer-link" href="#footer">
+      {list.item}
+    </List>
+  );
+});
+const renderResourcesLinkList = resourcesListLink.map((list) => {
+  return (
+    <List className="footer-link" href="#footer">
+      {list.item}
+    </List>
+  );
+});
 
 const Footer = () => {
   // TO UPDATE THE CURRENT YEAR IN FOOTER SECTION
   const currentYear = new Date().getFullYear();
+  const copyrightText = `Copyright © ${currentYear} by Omnifood, LLC. All rights reserved.`;
 
   return (
     <footer className="footer" id="footer">
       <div className="container grid grid--footer">
         <div className="logo-col">
-          <a href="#logo" className="footer-logo">
-            <img src={FooterLogo} className="logo" alt="Omnifood Logo" />
-          </a>
+          <Logo
+            href="#logo"
+            className="logo"
+            alt="omnifood-logo"
+            src={FooterLogo}
+          />
 
-          <ul className="social-links">
-            <li>
-              <a className="footer-link" href="#footer">
-                <ion-icon
-                  className="social-icon"
-                  name="logo-instagram"
-                ></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a className="footer-link" href="#footer">
-                <ion-icon
-                  className="social-icon"
-                  name="logo-facebook"
-                ></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a className="footer-link" href="#footer">
-                <ion-icon
-                  className="social-icon"
-                  name="logo-twitter"
-                ></ion-icon>
-              </a>
-            </li>
+          <ul className="social-links" style={{ paddingTop: "24px" }}>
+            {renderSocialLinkList}
           </ul>
-          <p className="copyright">
-            Copyright &copy; <span className="year">{currentYear}</span> by
-            Omnifood, LLC. All rights reserved.
-          </p>
+
+          <p className="copyright">{copyrightText}</p>
         </div>
         <div className="address-col">
           <p className="footer-heading">Contact us</p>
@@ -52,84 +119,26 @@ const Footer = () => {
               623 Harrison St., 2nd Floor, San Francisco, CA 94107
             </p>
             <p>
-              <a className="footer-link" href="tel:415-201-6370">
+              <Anchor className="footer-link" href="tel:415-201-6370">
                 415-201-6370
-              </a>
-              <a className="footer-link" href="mailto:hello@omnifood.com">
+              </Anchor>
+              <Anchor className="footer-link" href="mailto:hello@omnifood.com">
                 hello@omnifood.com
-              </a>
+              </Anchor>
             </p>
           </address>
         </div>
         <nav className="nav-col">
           <p className="footer-heading">Account</p>
-          <ul className="footer-nav">
-            <li>
-              <a className="footer-link" href="#footer">
-                Create Account
-              </a>
-            </li>
-            <li>
-              <a className="footer-link" href="#footer">
-                Sign in
-              </a>
-            </li>
-            <li>
-              <a className="footer-link" href="#footer">
-                iOS app
-              </a>
-            </li>
-            <li>
-              <a className="footer-link" href="#footer">
-                Android app
-              </a>
-            </li>
-          </ul>
+          <ul className="footer-nav">{renderAccountLinkList}</ul>
         </nav>
         <nav className="nav-col">
           <p className="footer-heading">Company</p>
-          <ul className="footer-nav">
-            <li>
-              <a className="footer-link" href="#footer">
-                About Omnifood{" "}
-              </a>
-            </li>
-            <li>
-              <a className="footer-link" href="#footer">
-                For Business{" "}
-              </a>
-            </li>
-            <li>
-              <a className="footer-link" href="#footer">
-                Cooking partners{" "}
-              </a>
-            </li>
-            <li>
-              <a className="footer-link" href="#footer">
-                Careers
-              </a>
-            </li>
-          </ul>
+          <ul className="footer-nav">{renderCompanyLinkList}</ul>
         </nav>
         <nav className="nav-col">
           <p className="footer-heading">Resources</p>
-          <ul className="footer-nav">
-            <li>
-              <a className="footer-link" href="#footer">
-                Recipe directory{" "}
-              </a>
-            </li>
-            <li>
-              <a className="footer-link" href="#footer">
-                Help center{" "}
-              </a>
-            </li>
-            <li>
-              <a className="footer-link" href="#footer">
-                Privacy & terms
-              </a>
-            </li>
-          </ul>
+          <ul className="footer-nav">{renderResourcesLinkList}</ul>
         </nav>
       </div>
     </footer>
