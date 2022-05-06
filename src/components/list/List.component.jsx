@@ -1,11 +1,10 @@
 import Anchor from "../anchor/anchor.component";
 
-const List = ({ className, href, children }) => {
+const List = ({ className, href, text, children }) => {
   return (
     <li>
-      <Anchor className={className} href={href}>
-        {children}
-      </Anchor>
+      <Anchor className={className} href={href} text={text}></Anchor>
+      {children}
     </li>
   );
 };

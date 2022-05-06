@@ -1,10 +1,7 @@
 import "./FeaturedIn.styles.css";
 
-import TechcrunchLogo from "../../assets/img/logos/techcrunch.png";
-import BusinessInsiderLogo from "../../assets/img/logos/business-insider.png";
-import NYTLogo from "../../assets/img/logos/the-new-york-times.png";
-import ForbesLogo from "../../assets/img/logos/forbes.png";
-import USATodayLogo from "../../assets/img/logos/usa-today.png";
+import { FeaturedInImages } from "../imported pictures/importedPictures";
+import TestimonialImg from "../testimonialImgs/TestimonialImg.component";
 
 const FeaturedIn = () => {
   return (
@@ -12,11 +9,7 @@ const FeaturedIn = () => {
       <div className="container">
         <h2 className="heading-featured-in">As featured in</h2>
         <div className="featured-logos">
-          <img src={TechcrunchLogo} alt="Techcrunch Logo" />
-          <img src={BusinessInsiderLogo} alt="Business Insider Logo" />
-          <img src={NYTLogo} alt="The New York Times Logo" />
-          <img src={ForbesLogo} alt="Forbes Logo" />
-          <img src={USATodayLogo} alt="USA Today" />
+          <TestimonialImg images={FeaturedInImages} alt="FeaturedIn" />
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
-const Anchor = ({ className, href, children }) => {
+const Anchor = ({ className, href, text }) => {
   return (
     <a className={className} href={href}>
-      {children}
+      {text}
     </a>
   );
 };

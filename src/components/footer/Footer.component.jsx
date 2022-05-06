@@ -5,6 +5,7 @@ import IonIcon from "../ionicon/IonIcon.component";
 import Logo from "../logo/Logo.component";
 import List from "../list/List.component";
 import Anchor from "../anchor/anchor.component";
+import Paragraph from "../HTML Elements/Paragraph.component";
 
 const socialLinkList = [
   {
@@ -69,25 +70,13 @@ const renderSocialLinkList = socialLinkList.map((list) => {
 });
 
 const renderCompanyLinkList = companyLinkList.map((list) => {
-  return (
-    <List className="footer-link" href="#footer">
-      {list.item}
-    </List>
-  );
+  return <List className="footer-link" href="#footer" text={list.item}></List>;
 });
 const renderAccountLinkList = accountLinkList.map((list) => {
-  return (
-    <List className="footer-link" href="#footer">
-      {list.item}
-    </List>
-  );
+  return <List className="footer-link" href="#footer" text={list.item}></List>;
 });
 const renderResourcesLinkList = resourcesListLink.map((list) => {
-  return (
-    <List className="footer-link" href="#footer">
-      {list.item}
-    </List>
-  );
+  return <List className="footer-link" href="#footer" text={list.item}></List>;
 });
 
 const Footer = () => {
@@ -115,16 +104,21 @@ const Footer = () => {
         <div className="address-col">
           <p className="footer-heading">Contact us</p>
           <address className="contact-info">
-            <p className="address">
-              623 Harrison St., 2nd Floor, San Francisco, CA 94107
-            </p>
+            <Paragraph
+              className="address"
+              text="623 Harrison St., 2nd Floor, San Francisco, CA 94107"
+            />
             <p>
-              <Anchor className="footer-link" href="tel:415-201-6370">
-                415-201-6370
-              </Anchor>
-              <Anchor className="footer-link" href="mailto:hello@omnifood.com">
-                hello@omnifood.com
-              </Anchor>
+              <Anchor
+                text="415-201-6370"
+                className="footer-link"
+                href="tel:415-201-6370"
+              />
+              <Anchor
+                text="hello@omnifood.com"
+                className="footer-link"
+                href="mailto:hello@omnifood.com"
+              />
             </p>
           </address>
         </div>

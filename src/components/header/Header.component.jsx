@@ -39,9 +39,12 @@ const navList = [
 
 const renderNavList = navList.map((list) => {
   return (
-    <List key={list.href} href={list.href} className={list.className}>
-      {list.listName}
-    </List>
+    <List
+      key={list.href}
+      href={list.href}
+      className={list.className}
+      text={list.listName}
+    ></List>
   );
 });
 
